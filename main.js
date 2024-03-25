@@ -66,10 +66,14 @@ function goCave() {
 }
 
 function buyHealth() {
-  gold -= 10;
-  health += 10;
-  goldText.innerText = gold;
-  healthText.innerText = health;
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    goldText.innerText = gold;
+    healthText.innerText = health;
+  } else {
+    text.innerText = "You have enough gold!";
+  }
 }
 
 function buyWeapon() {}
